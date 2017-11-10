@@ -2,7 +2,7 @@
 #include "vertex.h"
 
 const uint32_t oct_vcount = 6;  // vertices count
-const uint32_t oct_octunt = 24; // sides count
+const uint32_t oct_icount = 24; // sides count
 
 const vertex oct_vertices[oct_vcount] = {
 	{1,  0 , 0 },
@@ -13,7 +13,7 @@ const vertex oct_vertices[oct_vcount] = {
 	{0,  0 ,- 1}
 };
 
-const uint32_t oct_indices[oct_octunt] = {
+const uint32_t oct_indices[oct_icount] = {
 	2,  1,  5,
 	3,  2,  5,
 	4,  3,  5,

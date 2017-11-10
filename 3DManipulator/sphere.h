@@ -1,14 +1,14 @@
 #include <stdint.h>
 #include "vertex.h"
-const uint32_t vcount = 258;  // vertices count
-const uint32_t icount = 1440; // sides count
+const uint32_t sph_vcount = 258;  // vertices count
+const uint32_t sph_icount = 1440; // sides count
 int size = 1; //size multiplier
 
 // size - resize coeffitient 
 
 
 
-const vertex vertices[vcount] = {
+const vertex sph_vertices[sph_vcount] = {
 	{{-0.000000f * size, 1.000000f * size, 0.000000f * size}, {0.022329f, 0.180588f}, {0.000000f, 1.000000f, 0.000000f}},
 	{{0.180240f * size, 0.980785f * size, 0.074658f * size}, {0.024936f, 0.117923f}, {0.209815f, 0.973846f, 0.086886f}},
 	{{0.195090f * size, 0.980785f * size, 0.000001f * size}, {0.054432f, 0.125794f}, {0.195013f, 0.980773f, 0.000000f}},
@@ -271,7 +271,7 @@ const vertex vertices[vcount] = {
 
 // side numbers
 
-const uint32_t indices[icount] = {
+const uint32_t sph_indices[sph_icount] = {
 	0, 1, 2,
 	3, 4, 5,
 	4, 6, 5,
