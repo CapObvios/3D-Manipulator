@@ -2,7 +2,7 @@
 #include "vertex.h"
 
 const uint32_t dod_vcount = 20;  // vertices count
-const uint32_t dod_icount = 36; // sides count
+const uint32_t dod_icount = 108; // sides count
 
 
 const vertex dod_vertices[dod_vcount] = {

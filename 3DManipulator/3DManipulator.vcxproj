@@ -134,11 +134,15 @@
     <ClCompile Include="MyForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="cube.h" />
     <ClInclude Include="dodecahedron.h" />
+    <ClInclude Include="icosahedron.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="octahedron.h" />
     <ClInclude Include="sphere.h" />
+    <ClInclude Include="tetrahedron.h" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="vertex.h" />
   </ItemGroup>

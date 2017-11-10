@@ -81,13 +81,13 @@ namespace Types {
 
 			Point3D^ P1 = gcnew Point3D(-50, -50, 50);
 			Point3D^ P2 = gcnew Point3D(50, -50, -50);
-			Point3D^ P3 = gcnew Point3D(50, 50, 50);
+			Point3D^ P3 = gcnew Point3D(50, 50, 50  );
 			Point3D^ P4 = gcnew Point3D(-50, 50, -50);
 
 			Polygons->Add(gcnew Polygon(P1, P3, P2));
 			Polygons->Add(gcnew Polygon(P1, P4, P3));
 			Polygons->Add(gcnew Polygon(P3, P4, P2));
-			Polygons->Add(gcnew Polygon(P4, P3, P2));
+			Polygons->Add(gcnew Polygon(P4, P1, P2));
 		}
 
 		List<array<array<float>^>^>^ getMatrices()
