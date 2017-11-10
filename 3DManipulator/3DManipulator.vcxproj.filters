@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Заголовочные файлы\Figures">
+      <UniqueIdentifier>{d16c20b3-a893-4a58-884a-e179e7af08e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
@@ -26,26 +29,26 @@
     <ClInclude Include="Types.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="sphere.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
-    <ClInclude Include="dodecahedron.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="vertex.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="cube.h">
+      <Filter>Заголовочные файлы\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="dodecahedron.h">
+      <Filter>Заголовочные файлы\Figures</Filter>
+    </ClInclude>
     <ClInclude Include="icosahedron.h">
-      <Filter>Заголовочные файлы</Filter>
+      <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
     <ClInclude Include="octahedron.h">
-      <Filter>Заголовочные файлы</Filter>
+      <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
-    <ClInclude Include="cube.h">
-      <Filter>Заголовочные файлы</Filter>
+    <ClInclude Include="sphere.h">
+      <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
     <ClInclude Include="tetrahedron.h">
-      <Filter>Заголовочные файлы</Filter>
+      <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
