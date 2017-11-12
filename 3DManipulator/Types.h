@@ -26,6 +26,16 @@ namespace Types {
 		Resize
 	};
 
+	enum objectType
+	{
+		Tet,
+		Cub,
+		Dod,
+		Ico,
+		Oct,
+		Sph
+	};
+
 	ref class Point3D
 	{
 	public:
@@ -77,13 +87,13 @@ namespace Types {
 		}
 	};
 
-	ref class Tetrahedron
+	ref class GeometryObj
 	{
 	public:
 		List<Polygon^>^ Polygons;
-		Tetrahedron()
+		GeometryObj()
 		{
-			Polygons = gcnew List<Polygon^>();
+			/*Polygons = gcnew List<Polygon^>();
 
 			Point3D^ P1 = gcnew Point3D(-50, -50, 50);
 			Point3D^ P2 = gcnew Point3D(50, -50, -50);
@@ -93,16 +103,77 @@ namespace Types {
 			Polygons->Add(gcnew Polygon(P1, P3, P2));
 			Polygons->Add(gcnew Polygon(P1, P4, P3));
 			Polygons->Add(gcnew Polygon(P3, P4, P2));
-			Polygons->Add(gcnew Polygon(P4, P1, P2));
+			Polygons->Add(gcnew Polygon(P4, P1, P2));*/
 		}
 
-		List<array<array<float>^>^>^ getMatrices()
+		List<array<array<float>^>^>^ getMatrices(objectType type)
 		{
-			auto res = gcnew List<array<array<float>^>^>();
-			for each (auto pol in Polygons)
+			const int SizeFactor = 100;
+			auto vertices = sph_vertices;
+			auto vertex_indices = sph_indices;
+
+			int vertexCount = sph_vcount;
+			int vertexICount = sph_icount;
+			
+
+			switch (type)
+			{
+			case Types::Tet:
+				vertices = tet_vertices;
+				vertex_indices = tet_indices;
+				vertexCount = tet_vcount;
+				vertexICount = tet_icount;
+				break;
+			case Types::Cub:
+				vertices = cub_vertices;
+				vertex_indices = cub_indices;
+				vertexCount = cub_vcount;
+				vertexICount = cub_icount;
+				break;
+			case Types::Dod:
+				vertices = dod_vertices;
+				vertex_indices = dod_indices;
+				vertexCount = dod_vcount;
+				vertexICount = dod_icount;
+				break;
+			case Types::Ico:
+				vertices = ico_vertices;
+				vertex_indices = ico_indices;
+				vertexCount = ico_vcount;
+				vertexICount = ico_icount;
+				break;
+			case Types::Oct:
+				vertices = oct_vertices;
+				vertex_indices = oct_indices;
+				vertexCount = oct_vcount;
+				vertexICount = oct_icount;
+				break;
+			case Types::Sph:
+				vertices = sph_vertices;
+				vertex_indices = sph_indices;
+				vertexCount = sph_vcount;
+				vertexICount = sph_icount;
+				break;
+			default:
+				break;
+			}
+
+			auto res = gcnew List<array<array<float>^>^>(vertexCount);
+
+			for (size_t i = 0; i < vertexICount; i+=3)
+			{
+				array<array<float>^>^ poly = gcnew array<array<float>^>(3);
+				for (size_t j = 0;  j < 3;  j++)
+				{
+					auto ver = vertices[vertex_indices[i + j]].coords;
+					poly[j] = gcnew array<float>(3) { ver[0]*SizeFactor, ver[1]*SizeFactor, ver[2] * SizeFactor };
+				}
+				res->Add(poly);
+			}			
+			/*for each (auto pol in Polygons)
 			{
 				res->Add(pol->getMatrix());
-			}
+			}*/
 			return res;
 		}
 	};	

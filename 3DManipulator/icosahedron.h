@@ -40,5 +40,5 @@ const uint32_t ico_indices[ico_icount] = {
  3 , 8  ,10	,
  8 , 2  ,1	,
  4 , 10 , 9	,
- 5 , 9  ,1	,
+ 5 , 9  ,1
 };
