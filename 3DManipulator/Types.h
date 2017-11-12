@@ -1,6 +1,12 @@
 #pragma once
 
 #include <Windows.h>
+
+#include "cube.h"
+#include "dodecahedron.h"
+#include "icosahedron.h"
+#include "octahedron.h"
+#include "tetrahedron.h"
 #include "sphere.h" // sphere
 
 namespace Types {
@@ -71,11 +77,11 @@ namespace Types {
 		}
 	};
 
-	ref class Tetraedr
+	ref class Tetrahedron
 	{
 	public:
 		List<Polygon^>^ Polygons;
-		Tetraedr()
+		Tetrahedron()
 		{
 			Polygons = gcnew List<Polygon^>();
 
@@ -99,5 +105,10 @@ namespace Types {
 			}
 			return res;
 		}
+	};
+
+	interface class IGeometryObject
+	{
+
 	};
 }
