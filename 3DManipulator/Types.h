@@ -109,11 +109,11 @@ namespace Types {
 		List<array<array<float>^>^>^ getMatrices(objectType type)
 		{
 			const int SizeFactor = 100;
-			auto vertices = sph_vertices;
-			auto vertex_indices = sph_indices;
+			const vertex* vertices = dod_vertices;
+			const uint32_t* vertex_indices = dod_indices;
 
-			int vertexCount = sph_vcount;
-			int vertexICount = sph_icount;
+			int vertexCount = dod_vcount;
+			int vertexICount = dod_icount;
 			
 
 			switch (type)
@@ -165,7 +165,9 @@ namespace Types {
 				array<array<float>^>^ poly = gcnew array<array<float>^>(3);
 				for (size_t j = 0;  j < 3;  j++)
 				{
-					auto ver = vertices[vertex_indices[i + j]].coords;
+					// numeration of sphere vertex indices starts from 0, meanwhile all the other figures (decompiled from .obj type) start from 1
+					// ideally later they have to be lead to the same type, but just for now I did this quickfix due to the lack of time.
+					auto ver = vertices[vertex_indices[i + j] - (type == objectType::Sph ? 0 : 1) ].coords; 
 					poly[j] = gcnew array<float>(3) { ver[0]*SizeFactor, ver[1]*SizeFactor, ver[2] * SizeFactor };
 				}
 				res->Add(poly);

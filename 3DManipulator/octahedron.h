@@ -7,7 +7,7 @@ const uint32_t oct_icount = 24; // sides count
 const vertex oct_vertices[oct_vcount] = {
 	{1,  0 , 0 },
 	{0, - 1,  0},
-	{1,  0 , 0 },
+	{-1,  0 , 0 },
 	{0,  1 , 0 },
 	{0,  0 , 1 },
 	{0,  0 ,- 1}
