@@ -7,7 +7,7 @@
 #include "icosahedron.h"
 #include "octahedron.h"
 #include "tetrahedron.h"
-#include "sphere.h" // sphere
+#include "sphere.h" 
 
 namespace Types {
 
@@ -105,10 +105,5 @@ namespace Types {
 			}
 			return res;
 		}
-	};
-
-	interface class IGeometryObject
-	{
-
-	};
+	};	
 }

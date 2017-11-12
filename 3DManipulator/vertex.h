@@ -1,3 +1,4 @@
+#pragma once
 class vertex {
 public:
 	float coords[3];
