@@ -92,21 +92,7 @@ namespace Types {
 	ref class GeometryObj
 	{
 	public:
-		List<Polygon^>^ Polygons;
-		GeometryObj()
-		{
-			/*Polygons = gcnew List<Polygon^>();
-
-			Point3D^ P1 = gcnew Point3D(-50, -50, 50);
-			Point3D^ P2 = gcnew Point3D(50, -50, -50);
-			Point3D^ P3 = gcnew Point3D(50, 50, 50  );
-			Point3D^ P4 = gcnew Point3D(-50, 50, -50);
-
-			Polygons->Add(gcnew Polygon(P1, P3, P2));
-			Polygons->Add(gcnew Polygon(P1, P4, P3));
-			Polygons->Add(gcnew Polygon(P3, P4, P2));
-			Polygons->Add(gcnew Polygon(P4, P1, P2));*/
-		}
+		List<Polygon^>^ Polygons;		
 
 		List<array<array<float>^>^>^ getMatrices(objectType type)
 		{
@@ -187,4 +173,113 @@ namespace Types {
 			return res;
 		}
 	};	
+
+	ref class PlaneEquation
+	{
+	public:
+		PlaneEquation(Point3D A, Point3D B, Point3D C)
+		{
+			X = (B.Y - A.Y)*(C.Z - A.Z) - (B.Z - A.Z)*(C.Y - A.Y);
+			Y = -(B.X - A.X)*(C.Z - A.Z) + (B.Z - A.Z)*(C.X - A.X);
+			Z = (B.X - A.X)*(C.Y - A.Y) - (B.Y - A.Y)*(C.X - A.X);
+			D = -A.X*X - A.Y*Y - A.Z*Z;
+		};
+
+		double X, Y, Z, D;
+	};
+}
+
+namespace GeometryTypes
+{
+	enum struct VisibilityType
+	{
+		visible,
+		invisiblePart,
+		invisible
+	};
+
+	enum class FigureType
+	{
+		lineObj = 0,
+		circleObj = 2,
+		ellipseObj = 3
+	};
+
+	interface class IGeometry
+	{
+		System::Drawing::Point GetStartPoint();
+		System::Drawing::Point GetEndPoint();
+		FigureType GetFigureType();
+		System::Drawing::Color GetColor();
+	};
+
+	value class Line : IGeometry
+	{
+	public:
+		int X1;
+		int Y1;
+		int X2;
+		int Y2;
+		System::Drawing::Color Color;
+		Line(const int &x1, const int & y1, const int & x2, const int & y2, const System::Drawing::Color col)
+		{
+			X1 = x1;
+			Y1 = y1;
+			X2 = x2;
+			Y2 = y2;
+			Color = col;
+		}
+
+		// Inherited from IGeometry
+		virtual System::Drawing::Point GetStartPoint();
+		virtual System::Drawing::Point GetEndPoint();
+		virtual FigureType GetFigureType();
+		virtual System::Drawing::Color GetColor();
+	};
+
+	value class Circle : IGeometry
+	{
+	public:
+		int X0;
+		int Y0;
+		int R;
+		System::Drawing::Color Color;
+		Circle(const int &x0, const int & y0, const int & r, const System::Drawing::Color col)
+		{
+			X0 = x0;
+			Y0 = y0;
+			R = r;
+			Color = col;
+		}
+
+		// Inherited from IGeometry
+		virtual System::Drawing::Point GetStartPoint();
+		virtual System::Drawing::Point GetEndPoint();
+		virtual FigureType GetFigureType();
+		virtual System::Drawing::Color GetColor();
+	};
+
+	value class Ellipse : IGeometry
+	{
+	public:
+		int X0;
+		int Y0;
+		int A;
+		int B;
+		System::Drawing::Color Color;
+		Ellipse(const int &x0, const int & y0, const int & a, const int & b, const System::Drawing::Color col)
+		{
+			X0 = x0;
+			Y0 = y0;
+			A = a;
+			B = b;
+			Color = col;
+		}
+
+		// Inherited from IGeometry
+		virtual System::Drawing::Point GetStartPoint();
+		virtual System::Drawing::Point GetEndPoint();
+		virtual FigureType GetFigureType();
+		virtual System::Drawing::Color GetColor();
+	};
 }
