@@ -8,6 +8,7 @@
 #include "octahedron.h"
 #include "tetrahedron.h"
 #include "sphere.h" 
+#include "torus.h"
 
 namespace Types {
 
@@ -33,7 +34,8 @@ namespace Types {
 		Dod,
 		Ico,
 		Oct,
-		Sph
+		Sph,
+		Tor
 	};
 
 	ref class Point3D
@@ -154,6 +156,12 @@ namespace Types {
 				vertexCount = sph_vcount;
 				vertexICount = sph_icount;
 				break;
+			case Types::Tor:
+				vertices = tor_vertices;
+				vertex_indices = tor_indices;
+				vertexCount = tor_vcount;
+				vertexICount = tor_icount;
+				break;
 			default:
 				break;
 			}
@@ -165,9 +173,9 @@ namespace Types {
 				array<array<float>^>^ poly = gcnew array<array<float>^>(3);
 				for (size_t j = 0;  j < 3;  j++)
 				{
-					// numeration of sphere vertex indices starts from 0, meanwhile all the other figures (decompiled from .obj type) start from 1
+					// numeration of sphere and torus vertex indices starts from 0, meanwhile all the other figures (decompiled from .obj type) start from 1
 					// ideally later they have to be lead to the same type, but just for now I did this quickfix due to the lack of time.
-					auto ver = vertices[vertex_indices[i + j] - (type == objectType::Sph ? 0 : 1) ].coords; 
+					auto ver = vertices[vertex_indices[i + j] - (type == objectType::Sph || type == objectType::Tor ? 0 : 1) ].coords; 
 					poly[j] = gcnew array<float>(3) { ver[0]*SizeFactor, ver[1]*SizeFactor, ver[2] * SizeFactor };
 				}
 				res->Add(poly);

@@ -50,6 +50,12 @@
     <ClInclude Include="tetrahedron.h">
       <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
+    <ClInclude Include="MyTorus.h">
+      <Filter>Заголовочные файлы\Figures</Filter>
+    </ClInclude>
+    <ClInclude Include="torus.h">
+      <Filter>Заголовочные файлы\Figures</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
