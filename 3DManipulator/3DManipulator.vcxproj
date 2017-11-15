@@ -146,7 +146,6 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="octahedron.h" />
-    <ClInclude Include="polimath.h" />
     <ClInclude Include="sphere.h" />
     <ClInclude Include="tetrahedron.h" />
     <ClInclude Include="MyTorus.h" />

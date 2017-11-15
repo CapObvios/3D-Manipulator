@@ -62,9 +62,6 @@
     <ClInclude Include="torus.h">
       <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
-    <ClInclude Include="polimath.h">
-      <Filter>Заголовочные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Drawer.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
