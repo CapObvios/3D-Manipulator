@@ -149,7 +149,7 @@
     <ClInclude Include="sphere.h" />
     <ClInclude Include="tetrahedron.h" />
     <ClInclude Include="MyTorus.h" />
-    <ClInclude Include="torus.h" />
+    <ClInclude Include="torus.hpp" />
     <ClInclude Include="Types.h" />
     <ClInclude Include="vertex.h" />
   </ItemGroup>

@@ -8,7 +8,7 @@
 #include "octahedron.h"
 #include "tetrahedron.h"
 #include "sphere.h" 
-#include "torus.h"
+#include "torus.hpp"
 
 namespace Types {
 

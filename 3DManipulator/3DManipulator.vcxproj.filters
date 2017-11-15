@@ -59,14 +59,14 @@
     <ClInclude Include="MyTorus.h">
       <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
-    <ClInclude Include="torus.h">
-      <Filter>Заголовочные файлы\Figures</Filter>
-    </ClInclude>
     <ClInclude Include="Drawer.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="geometryTypes.h">
       <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="torus.hpp">
+      <Filter>Заголовочные файлы\Figures</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
