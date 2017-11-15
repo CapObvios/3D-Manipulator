@@ -126,6 +126,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -139,6 +140,7 @@
     <ClInclude Include="cube.h" />
     <ClInclude Include="dodecahedron.h" />
     <ClInclude Include="Drawer.h" />
+    <ClInclude Include="geometryTypes.h" />
     <ClInclude Include="icosahedron.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>

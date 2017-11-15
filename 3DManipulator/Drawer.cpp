@@ -1,5 +1,5 @@
 #include "Drawer.h"
-#include "Types.h"
+#include "geometryTypes.h"
 
 #include <Windows.h>
 
@@ -9,7 +9,7 @@
 	using namespace System::Windows::Forms;
 	using namespace Drawer;
 	using namespace System::Collections::Generic;
-	using namespace System::Linq;
+	using namespace System::Data::Linq;
 	using namespace System::Runtime::CompilerServices;
 
 	System::Void Drawer::SimpleDrawer::DrawLine(System::Drawing::Graphics ^ g, System::Windows::Forms::PictureBox ^ DrawingAreaPB, const int & x1, const int & y1, const int & x2, const int & y2, System::Drawing::Color col)
