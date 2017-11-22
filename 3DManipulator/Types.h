@@ -7,7 +7,7 @@
 #include "icosahedron.h"
 #include "octahedron.h"
 #include "tetrahedron.h"
-#include "sphere.h" 
+#include "sphere.h"
 #include "torus.hpp"
 
 namespace Types {
@@ -46,6 +46,8 @@ namespace Types {
 		Point3D() : X(0), Y(0), Z(0) { }
 		Point3D(float x, float y, float z) : X(x), Y(y), Z(z) { }
 		Point3D(array<float,1>^ p) : X(p[0]), Y(p[1]), Z(p[2]) { }
+		Point3D(Point3D^ p) : X(p->X), Y(p->Y), Z(p->Z) { }
+		Point3D(Point3D% p) : X(p.X), Y(p.Y), Z(p.Z) { }
 
 		Point3D% operator= (Point3D^ right)
 		{
@@ -57,6 +59,16 @@ namespace Types {
 			Z = right->Z;
 
 			return *this;
+		}
+
+		Point3D% operator+(Point3D^ right)
+		{
+			return Point3D(right->X + this->X, right->Y + this->Y, right->Z + this->Z);
+		}
+
+		Point3D% operator/(float divisor)
+		{
+			return Point3D(this->X / divisor, this->Y / divisor, this->Z / divisor);
 		}
 
 		array<float>^ GetVector()
